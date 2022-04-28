@@ -1,0 +1,12 @@
+.logo-container {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-header {
+  padding-top: 50px;
+  text-align: center;
+}
