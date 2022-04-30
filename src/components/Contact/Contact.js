@@ -7,12 +7,10 @@ import { AiOutlinePhone } from 'react-icons/ai';
 const logoSize = '50px';
 const linkedinButtonColor = '#0077b5';
 const githubButtonColor = '#a4aeb2';
-const phoneColor = '#fff';
 const emailColor = '#fff';
 const linkedinAddress = 'https://www.linkedin.com/in/shai-ballali-28b7a217a/';
 const githubAddress = 'https://github.com/ShaiBallali';
 const email = 'mailto: shai135790@gmail.com';
-const phoneNumber = '+9722342749';
 
 function Contact() {
   return (

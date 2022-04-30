@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <img src="../resources/linkedin-logo.png" alt="" />
       <Link className={'link'} to="/">
         About
       </Link>

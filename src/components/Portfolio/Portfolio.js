@@ -6,49 +6,88 @@ import tomcatPic from './resources/tomcat-pic.png';
 import okHttpPic from './resources/okhttp-pic.png';
 import gsonPic from './resources/gson-pic.png';
 import cppPic from './resources/cpp-pic.png';
-import visualStudioPic from './resources/visual-studio-pic.png';
-import { FaJava } from 'react-icons/fa';
+import visualStudioPic from './resources/visual-studio-pic.jpg';
+import githubPic from './resources/github-pic.png';
+import oopPic from './resources/oop-pic.jpg';
 
-const logoSize = '50px';
-const javaButtonColor = '#0077b5';
+/* Constants*/
+
+const gpupLink = 'https://github.com/ShaiBallali/Gpup';
+const boardGamesLink = 'https://github.com/ShaiBallali/BoardGames';
+
+/********************************/
 
 function Portfolio() {
   return (
     <container>
       <div className="gpup-container">
-        <GpupPic />
-        <GpupSkills />
-        <Gpup />
-      </div>
-      <div className="board-games-container">
-        <ChessPic />
-        <BoardGamesSkils />
-        <BoardGames />
+        <Slides />
       </div>
     </container>
   );
 }
 
+function GpupHeader() {
+  return <h1 className="slide-header">G.P.U.P</h1>;
+}
+
+function BoardGamesHeader() {
+  return <h1 className="slide-header"> Board Games</h1>;
+}
+
 function GpupSkills() {
   return (
-    <container className="gpup-skills-container">
-      <img className="java-pic" src={javaPic} alt="sss" />
-      <img className="tomcat-pic" src={tomcatPic} alt="sss" />
-      <img className="okhttp-pic" src={okHttpPic} alt="sss" />
-      <img className="gson-pic" src={gsonPic} alt="sss" />
-    </container>
+    <div className="slide-skills">
+      <Skill src={javaPic} />
+      <Skill src={okHttpPic} />
+      <Skill src={tomcatPic} />
+      <Skill src={gsonPic} />
+    </div>
+  );
+}
+
+function BoardGamesSkills() {
+  return (
+    <div className="slide-skills">
+      <Skill src={cppPic} />
+      <Skill src={visualStudioPic} />
+      <Skill src={oopPic} />
+    </div>
+  );
+}
+
+function GpupInfo() {
+  return (
+    <div className="slide-info">
+      G.P.U.P – Generic Platform for Utilizing Processes. GPUP is a
+      multi-threaded platform that enables to model set of dependencies between
+      components and handle them efficiently, getting various insights out of
+      the ‘graph’ components: routes, circles, transitive dependencies etc.
+    </div>
+  );
+}
+
+function BoardGamesInfo() {
+  return (
+    <div className="slide-info">
+      Chess, Checkers and Amazons implemented in C++, using object oriented
+      features.
+    </div>
+  );
+}
+
+function Skill(props) {
+  return (
+    <div>
+      <img className="pic" src={props.src} alt="" />
+    </div>
   );
 }
 
 function GpupPic() {
   return (
-    <div>
-      <a
-        href="https://github.com/ShaiBallali/Gpup"
-        target="_blank"
-        rel="noreferrer"
-        className="icon"
-      >
+    <div className="slide-pic">
+      <a href={gpupLink} target="_blank" rel="noreferrer" className="icon">
         <img className="gpup-graph" src={gpupPic} alt="sss" />
       </a>
     </div>
@@ -56,9 +95,9 @@ function GpupPic() {
 }
 function ChessPic() {
   return (
-    <div>
+    <div className="slide-pic">
       <a
-        href="https://github.com/ShaiBallali/BoardGames"
+        href={boardGamesLink}
         target="_blank"
         rel="noreferrer"
         className="icon"
@@ -69,38 +108,43 @@ function ChessPic() {
   );
 }
 
-function BoardGamesSkils() {
+function Slide(props) {
   return (
-    <container className="board-games-skills-container">
-      <img className="cpp-pic" src={cppPic} alt="sss" />
-      <img className="visual-studio-pic" src={visualStudioPic} alt="sss" />
-    </container>
-  );
-}
-
-function Gpup() {
-  return (
-    <div className="gpup">
-      <h1 className="header">G.P.U.P</h1>
-      <p className="gpup-paragraph">
-        G.P.U.P – Generic Platform for Utilizing Processes. GPUP is a
-        multi-threaded platform that enables to model set of dependencies
-        between components and handle them efficiently, getting various insights
-        out of the ‘graph’ components: routes, circles, transitive dependencies
-        etc.
+    <div className="slide">
+      <h1 className="slide-header">
+        <props.header />
+      </h1>
+      <p className="slide-paragraph">
+        <props.info />
       </p>
+      <skills className="slide-skills">
+        <props.skills />
+      </skills>
+      <github-icon className="slide-icon">
+        <container className="github-and-pic">
+          <h3 className="github-header">Github:</h3>
+          <props.github />
+        </container>
+      </github-icon>
     </div>
   );
 }
 
-function BoardGames() {
+function Slides() {
   return (
-    <div className="board-games">
-      <h1 className="header">Board Games</h1>
-      <p className="board-games-paragraph">
-        Chess, Checkers and Amazons implemented in C++, using object oriented
-        features.
-      </p>
+    <div>
+      <Slide
+        header={GpupHeader}
+        info={GpupInfo}
+        skills={GpupSkills}
+        github={GpupPic}
+      />
+      <Slide
+        header={BoardGamesHeader}
+        info={BoardGamesInfo}
+        skills={BoardGamesSkills}
+        github={ChessPic}
+      />
     </div>
   );
 }

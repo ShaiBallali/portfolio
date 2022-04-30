@@ -1,8 +1,6 @@
 /*********************/
 
 .header {
-  margin: 0;
-  letter-spacing: -0.05em;
   color: #fff;
 }
 
@@ -10,73 +8,43 @@
 
 .gpup-graph {
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
+  border-radius: 2px;
+  padding: 2px;
   display: block;
   object-fit: cover;
-  height: 170px;
-  width: 170px;
+  height: 80px;
+  width: 80px;
+  transition: width 1s, height 1s;
+}
+
+.gpup-graph:hover {
+  height: 100px;
+  width: 100px;
 }
 
 .chess-board {
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  max-height: 170px;
+  border-radius: 2px;
+  display: block;
+  padding: 2px;
+  width: 80px;
+  height: 80px;
+  transition: width 1s, height 1s;
 }
 
-.java-pic {
+.chess-board:hover {
+  height: 100px;
+  width: 100px;
+}
+
+.pic {
   border: 1px solid #ddd;
   border-radius: 2px;
   padding: 3px;
-  max-height: 50px;
+  width: 45px;
+  height: 45px;
   opacity: 90%;
-  align-self: flex-end;
-}
-
-.tomcat-pic {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 3px;
-  max-height: 50px;
-  opacity: 90%;
-  align-self: flex-end;
-}
-
-.okhttp-pic {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 3px;
-  max-height: 50px;
-  opacity: 90%;
-  align-self: flex-end;
-}
-
-.gson-pic {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 3px;
-  max-height: 50px;
-  opacity: 90%;
-  align-self: flex-end;
-}
-
-.cpp-pic {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 3px;
-  max-height: 50px;
-  opacity: 90%;
-  align-self: flex-end;
-}
-
-.visual-studio-pic {
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 3px;
-  max-height: 50px;
-  opacity: 90%;
-  align-self: flex-end;
+  object-fit: cover;
 }
 
 /* Images */
@@ -86,72 +54,49 @@
   flex-direction: column;
 }
 
-.gpup {
-  display: block;
-  font-family: Inter, sans-serif;
-  color: #fff;
-  height: fit-content;
-}
-
-.board-games {
-  display: block;
-  font-family: Inter, sans-serif;
-  color: #fff;
-  padding-top: 95px;
-}
-
-.board-games-paragraph {
-  max-width: 350px;
-}
-
-.gpup-paragraph {
-  max-width: 350px;
-}
-
-/* Containers */
-
-.gpup-container {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 100px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 180px;
-}
-
-.board-games-container {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 150px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 180px;
-}
-
-.gpup-skills-container {
+.slide-skills {
   display: flex;
   justify-content: center;
-  max-width: 350px;
-  max-height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.board-games-skills-container {
+.slide-header {
+  font-family: Inter, sans-serif;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.05em;
+  font-size: 34px;
+  text-align: center;
+}
+
+.slide-info {
+  color: #fff;
+
+  max-width: 450px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.slide-pic {
   display: flex;
   justify-content: center;
-  max-width: 350px;
-  max-height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.container {
+.github-and-pic {
   display: flex;
   flex-direction: column;
 }
+
+.github-header {
+  padding-top: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+.slide {
+  padding: 30px;
+}
+
+/* Containers */
 
 /* Containers */
 
